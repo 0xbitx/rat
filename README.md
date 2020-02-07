@@ -53,12 +53,13 @@ The difference between the EXE installations is that the client script is window
 * System Information
 * Location Data
 
----
+## Documentation
 * () = required
 * [] = optional
 * | = or
 
-## Shell commands
+#### **Shell commands**
+---
 * running
   * Get data about all the running modules, what client it is running on & its identifying number.
 
@@ -126,7 +127,8 @@ The difference between the EXE installations is that the client script is window
 * exit | quit
   * Exit the program for good.
 
-## Session commands
+#### **Session commands**
+---
 * running
   * This will return all the running modules (Stream, Cam, Audio, Keylogger, Talk), what client this module is running on & what index that module is bound to, because you can run as many modules on any & all clients at any time you will need to specify that modules id when using module commands shown below.
 
@@ -203,7 +205,8 @@ The difference between the EXE installations is that the client script is window
 * else command prompt data [-t] [-b] [-i]
   * If no built in command is used everything will be thrown into the clients command prompt as a subprocess returning the data provided. The flags available is "-t" which will thread the command not displaying any data on screen but will execute the command. The "-b" flag will backup the data returned into a textfile & "-i" will provide a black & white image of the results, saving it to a png file. The "-t" flag can't be used in conjunction with "-b" or "-i" but "-b" & "-i" can be used together, in any order just as long as they are in the end of the string data being sent.
 
-## Options Available
+#### **Options available**
+---
 * quick mode
   * Simply sets "history" & "whoami" to False. 
 
@@ -242,8 +245,9 @@ The difference between the EXE installations is that the client script is window
   * to
     * Get a email notice everytime a client connects, you will have to provide a gmail & gmail password that allows "unsafe" applications to use the email. Also if you want to send this notification to multiple people the "to" option allows that, but by default "to" will automatically be set to your own email. Default is False.
 
-## Command Line Unique Options
-All of the options above can be set with the help of command line arguments when running the program. But there are also some unique ones.
+#### **Command line unique options**
+---
+All of the options above can be set with the help of command line arguments when running the program. But there are also some unique ones. To get all the available options, simply run the script using the -h flag.
 
 * --banner | -b
   * To not show banner upon running script. Default is False.
@@ -259,7 +263,5 @@ All of the options above can be set with the help of command line arguments when
 
 * --use_latest | -uL
   * To use the most recent "IP", "Port" & "Module Ports" if you simply want to use what you used last time running the script. Default is False.
-
-#### **To get every flag available as a command line argument simply run the script with as such: "Python server.py -h".**
 ---
 _Please don't use Eagle Eyes for illegal purposes_
