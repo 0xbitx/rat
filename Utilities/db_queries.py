@@ -5,7 +5,6 @@ def update_db(use_latest, ip, port, module_ports):
   conn = sqlite3.connect('Settings.db')
   c = conn.cursor()
 
-  # Save changes to DB
   if use_latest is False:
     try:
       c.execute("""CREATE TABLE settings (

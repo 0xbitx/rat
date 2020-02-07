@@ -1,9 +1,10 @@
-import os
-import time
-import ctypes
 import winreg
-from sys import exit
+import ctypes
+import time
+import os
+
 from subprocess import Popen, PIPE
+from sys import exit
 
 
 FOD_HELPER = r'C:\Windows\System32\fodhelper.exe'

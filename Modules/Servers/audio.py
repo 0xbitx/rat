@@ -1,20 +1,18 @@
+import pyaudio
 import socket
 import pickle
 import zlib
 import time
-import pyaudio
 import wave
-from sys import exit
-from Specific.encrypt import Encryption
+
 from Utilities.db_queries import get_module_data
+from Specific.encrypt import Encryption
+from sys import exit
 
 
 try:
-	# Address
 	info = get_module_data()
-	# Settings
 	audio_settings = []
-	# Socket
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.bind((info[1], int(info[3].split(',')[2])))
 	s.listen()

@@ -2,8 +2,9 @@ import socket
 import pickle
 import zlib
 import cv2
-from sys import exit
+
 from Specific.encrypt import Encryption
+from sys import exit
 
 
 def Cam(ip, port, encoding, position):

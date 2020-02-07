@@ -1,11 +1,12 @@
+import pyaudio
 import socket
 import pickle
 import zlib
 import time
-import pyaudio
 import wave
-from sys import exit
+
 from Specific.encrypt import Encryption
+from sys import exit
 
 
 def Audio(ip, port, encoding):

@@ -1,20 +1,18 @@
+import random
 import socket
 import pickle
 import zlib
 import time
-import random
 import cv2
-from sys import exit
-from Specific.encrypt import Encryption
+
 from Utilities.db_queries import get_module_data
+from Specific.encrypt import Encryption
+from sys import exit
 
 
 try:
-	# Address
 	info = get_module_data()
-	# Settings
 	cam_settings = []
-	# Socket
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.bind((info[1], int(info[3].split(',')[1])))
 	s.listen()

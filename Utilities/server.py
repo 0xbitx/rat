@@ -1,8 +1,9 @@
-import os
-import sys
-import time
-import random
 import msvcrt
+import random
+import time
+import sys
+import os
+
 from PIL import ImageFont, Image, ImageDraw, ImageOps
 from colorama import Fore, Style
 

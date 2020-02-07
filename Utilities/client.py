@@ -1,5 +1,5 @@
-import ctypes
 import webbrowser
+import ctypes
 
 
 def show_message(title, text, style):
