@@ -27,7 +27,7 @@ Eagle Eyes is a powerful low level TCP networking RAT. Supporting desktop stream
 
 The difference between the EXE installations is that the client script is windowless (-w), becoming a background process operation without the interference of the user.
 
-## Supported features:
+## Features:
 * TCP Network stream (IPv4)
 * Deflate Compression & AES128 Encryption
 * Botnet Like Functionality
@@ -89,7 +89,7 @@ The difference between the EXE installations is that the client script is window
   * If you need to use your command prompt of your server, you can do it from within the program.
 
 * archive (client username | -a)
-  * Archive the data collected from a specific client or all clients with "-a". This will remove the folder of either the single user or all users after them being archived.
+  * Archive the data collected from a specific client or all clients with "-a" flag. This will remove the folder of either the single user or all users after them being archived.
 
 * whoami (client index)
   * If you've not used whoami upon connect option you can do it manually, gathering vital system information & location data of a client.
@@ -101,7 +101,7 @@ The difference between the EXE installations is that the client script is window
   * List all the connected clients, either with basic information or a long list of who this person is with the "-l" flag.
 
 * session (client index)
-  * Upon a session with a specific client, this will make more commands available without the "all" or "client" commands & be receptive to command prompt data responses. Note that this session will be timed out after 2 minutes of inactivity returning you back to the managing Shell to be able to keep all the clients alive even when no data is being sent between the sockets. If this happens, you can just reconnect & proceed.
+  * Upon a session with a specific client, this will make more commands available without the "all" or "client" commands & be receptive to command prompt data responses. Note that this session will be timed out after 2 minutes of inactivity returning you back to the managing shell to be able to keep all the clients alive even when no data is being sent between the sockets. If this happens, you can just reconnect & proceed.
 
 * client (client index) (session command)
   * Send a session command to a specific client without entering a session with this client.
@@ -122,7 +122,7 @@ The difference between the EXE installations is that the client script is window
   * Print out the banner that is shown when initially running the program.
 
 * clear | cls
-  * Clear the console.
+  * Clears the console.
 
 * exit | quit
   * Exit the program for good.
@@ -130,7 +130,7 @@ The difference between the EXE installations is that the client script is window
 #### **Session commands**
 ---
 * running
-  * This will return all the running modules (Stream, Cam, Audio, Keylogger, Talk), what client this module is running on & what index that module is bound to, because you can run as many modules on any & all clients at any time you will need to specify that modules id when using module commands shown below.
+  * This will return all the running modules (stream, cam, audio, keylogger, talk), what client this module is running on & what index that module is bound to, because you can run as many modules on any & all clients at any time, you will need to specify that modules id when using module commands shown below.
 
 * stream [ip:port]
 * stream kill (stream index)
@@ -155,10 +155,10 @@ The difference between the EXE installations is that the client script is window
   * The talk module will allow you to talk into your microphone & the client will hear you, this can be used in conjunction with the audio module creating a audio conversation possibility.
 
 * upload (filename) [-e]
-  * The "-e" option will automatically execute the uploaded file on the clients computer.
+  * The "-e" flag will automatically execute the uploaded file on the clients computer.
 
 * note => [filename] => (message)
-  * The note command will create a specific folder storing all your notes about a specific client with timestamps. The "filename" is an option because otherwise it will be saved to global.txt as it is the default, .txt will also automatically if you choose to set a filename. This command can be used to handle & organize your thoughts & ideas when dealing with multiple clients. Having the notes as a backup.
+  * The note command will create a specific folder storing all your notes about a specific client with timestamps. The "filename" is an option because otherwise it will be saved to global.txt as it is the default, .txt will also automatically be added if you choose to set a filename. This command can be used to handle & organize your thoughts & ideas when dealing with multiple clients. Having the notes as a backup.
 
 * whoami
   * The whoami command provides you with all the systeminfo & location data along with the initial socket data written out to the console. Making it clear who this client is & all the neccesary data you will need.
@@ -169,8 +169,8 @@ The difference between the EXE installations is that the client script is window
 * clear | cls
   * Clears the console.
 
-* exit | quit
-  * Exit the session & go back to your managing Shell.
+* exit | quitx
+  * Exit the session & go back to your managing shell.
 
 * download (filename) [-e]
   * Download a file with the option to execute upon successful download.
@@ -185,7 +185,7 @@ The difference between the EXE installations is that the client script is window
   * Change the directory of you session shell & navigate as you would a normal command prompt. Note that system variables cannot be used.
 
 * elevate (filepath)
-  * This will attempt to run the specified executeable program as administrator, if you run this on this script successfully you will be provided with an administrator shell having the privilege to create services & edit the Windows registry.
+  * This will attempt to run the specified executeable program as administrator, if you run this on this script successfully you will be provided with an administrator shell having the privilege to create services & edit the Windows Registry.
 
 * service (type) (service name) (filepath)
   * If you successfully acquired a administrator shell you can create & edit services. This will make your script sticky, automatically running the program upon startup without any questions. First have to specify either to "delete" or "create" the service, the name of Z service & the absolute path of the executeable.
@@ -208,10 +208,10 @@ The difference between the EXE installations is that the client script is window
 #### **Options available**
 ---
 * quick mode
-  * Simply sets "history" & "whoami" to False. 
+  * Simply sets the "history" & "whoami" flags to False. 
 
 * username
-  * Set username of the server, default is your Windows username provided by the username enviorment variable.
+  * Set username of the server, default is your Windows username provided by the username environment variable.
 
 * theme
   * Sets the color theme of the console, the deafult theme is light. The available themes are:
@@ -247,7 +247,7 @@ The difference between the EXE installations is that the client script is window
 
 #### **Command line unique options**
 ---
-All of the options above can be set with the help of command line arguments when running the program. But there are also some unique ones. To get all the available options, simply run the script using the -h flag.
+All of the options above can be set with the help of command line arguments when running the program. But there are also some unique ones. To get all the available options, simply run the script using the "-h" flag.
 
 * --banner | -b
   * To not show banner upon running script. Default is False.
@@ -255,13 +255,13 @@ All of the options above can be set with the help of command line arguments when
 * --internet_protocol (IP) | -ip (IP)
   * To specify the hosting IP of the server, default is 127.0.0.1.
 
-* --port (Port) | -p (Port)
-  * To specify a port which you client script will connect to. Default is 1200.
+* --port (port) | -p (port)
+  * To specify the hosting port of the server, default is 1200.
 
-* --module_ports (Module Ports) | -mP (Module Ports)
+* --module_ports (module ports) | -mP (module ports)
   * The ports of the modules, because they use individual socket connections. Default is 1201,1202,1203,1204,1205.
 
 * --use_latest | -uL
-  * To use the most recent "IP", "Port" & "Module Ports" if you simply want to use what you used last time running the script. Default is False.
+  * To use the most recent "IP", "port" & "module_ports" settings, if you simply want to use what you used last time running the script. Default is False.
 ---
 _Please don't use Eagle Eyes for illegal purposes_
