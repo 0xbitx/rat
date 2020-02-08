@@ -19,11 +19,11 @@ Eagle Eyes is a powerful low level TCP networking RAT. Supporting desktop stream
 ## EXE installation
 #### **Command prompt 1 (server install)**
 * cd Eagle-Eyes
-* pyinstaller -F -i [server icon path] [server script path]
+* pyinstaller -F -i [server icon path] server.py
 
 #### **Command prompt 2 (client install)**
 * cd Eagle-Eyes
-* pyinstaller -F -w -i [client icon path] [client script path]
+* pyinstaller -F -w -i [client icon path] client.py
 
 The difference between the EXE installations is that the client script is windowless (-w), becoming a background process operation without the interference of the user.
 
