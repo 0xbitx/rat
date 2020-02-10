@@ -13,7 +13,7 @@ class Email:
   def send_email(self):
     message = f'From: {self.sender}\nTo: {", ".join(self.recievers)}\nSubject: {self.subject}\n\n{self.text}'
 
-    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
     server.login(self.sender, self.sender_pw)
